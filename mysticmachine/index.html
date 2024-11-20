@@ -1,0 +1,156 @@
+<html>
+<head>
+	<style>
+body {
+white-space: pre-line;
+}
+	</style>
+</head>
+<body>
+	<p id="words"></p>
+
+
+ <script src="words.js"></script> 
+
+<script>
+let memorywords = [""]; 
+
+const pronouns = ["I", "you", "he", "she", "it", "they"];
+const pronounsacc = ["me", "you", "him", "her", "it", "them"];
+const possessive = ["my", "your", "his", "her", "its", "their"];
+
+
+let numprons = pronouns.length;
+let randpronoun = Math.floor(Math.random() * pronouns.length);
+
+
+
+
+const questions = [
+"Hello, I want to talk to you."
+];
+
+
+let numnouns = nouns.length;
+let randnoun = Math.floor(Math.random() * nouns.length);
+
+let generatedwords = [];
+
+let wordchoices = ["nouns", "adjectives", "verbs", "exclamations", "conjunctions", "pronouns", "pronounsacc", "possessive", "adverbs"];
+let paragraphtext = document.getElementById("words");
+let selectedones = [];
+
+
+function generateword(wordkind){
+
+	function checking()
+	{
+	let randword = Math.floor(Math.random() * wordkind.length);
+	let randword2 = Math.floor(Math.random() * randword / 3);
+	}
+
+
+	for(x=0; x < wordkind.length; x++)
+	{
+
+	let randword = Math.floor(Math.random() * wordkind.length);
+	let randword2 = Math.floor(Math.random() * randword / 3);
+
+
+		checking();
+		if((wordkind[randword2].length) < 1)
+	{
+		if(wordkind == "pronouns")
+	{
+		return wordkind[randword2];
+	}
+	else
+	{
+		checking();
+	}
+	}
+	else
+	{
+		return wordkind[randword2];
+	}
+	
+
+	//generatedwords.push(wordkind[randword2]);
+	
+	}
+
+}
+let i;
+
+
+for( i = 0; i < 90; i++){
+	let wordchoices1 = ["nouns", "adjectives", "verbs", "exclamations", "conjunctions", "pronouns", "pronounsacc", "possessive", "adverbs"];
+		let selection = Math.floor(Math.random() * wordchoices1.length);
+
+		selectedones.push(wordchoices[selection]);
+		//alert(selectedones(i));
+
+}
+
+for(ii=0;ii<30;ii++)
+{
+
+	let array = selectedones[ii].toString();
+	alert(array);
+	let randomvalue = Math.floor(Math.random() * 20);
+
+	if(randomvalue < 4)
+{
+	paragraphtext.textContent += generateword(conjunctions) + " " + generateword(pronouns) + " " + generateword(verbs) + " " + generateword(adpositions) + " " + generateword(pronounsacc) + " " + generateword(conjunctions) + " " + generateword(verbs) + ". " + "\r\n";
+}
+else if(randomvalue < 7)
+{
+	paragraphtext.textContent += generateword(conjunctions) + " the " + generateword(adjectives) + " " + generateword(nouns) + " " + generateword(verbs) + " " + generateword(adverbs) + ", " 
+	
+	if (randomvalue == 5) {
+	+ generateword(adpositions) } else { + generateword(pronouns) } 
+	
+	+ " " + generateword(nouns) + " " + generateword(verbs) + " " + generateword(pronounsacc) + ". " + "\r\n";
+
+}
+else if(randomvalue < 9)
+{
+	paragraphtext.textContent += generateword(exclamations) + " "
+	
+	if (randomvalue < 4) { + generateword(pronouns) } else { + generateword(nouns) } + " " + generateword(verbs) + " " + generateword(adpositions) + " " + generateword(possessive) + " " + generateword(nouns) + " " + generateword(verbs) + ". " + "\r\n";
+}
+else if(randomvalue < 15)
+{
+	paragraphtext.textContent += "The " + generateword(adjectives) + " " + generateword(verbs) + " " + generateword(adverbs) + "." + "\r\n";
+}
+else
+{
+	paragraphtext.textContent += generateword(conjunctions) + " " + generateword(pronouns) + " " + generateword(verbs) + " " + generateword(adverbs) + ", " + generateword(conjunctions) + " " + generateword(pronouns) + " " + generateword(verbs) + " " + generateword(pronounsacc) + "." + "\r\n";
+}
+	
+}
+
+
+
+
+/* document.getElementById("words").innerHTML = "The " + generateword(adjectives) + " " + generateword(nouns) + " " + generateword(verbs) + " " + generateword(adverbs) + " " + generateword(adpositions)  + " " + generateword(nouns) + ", " + generateword(conjunctions) + " " + generateword(nouns) + " " + generateword(verbs) + " " + generateword(nouns) + " " + generateword(adpositions) + " " + generateword(possessive) + " " + generateword(nouns) + " " + generateword(verbs) + " " + generateword(pronounsacc) + "."
++ "<br />" + generateword(conjunctions).toUpperCase() + " " + generateword(nouns) + " " +  generateword(adverbs) + " " + generateword(verbs) + " " + generateword(possessive) + " " + generateword(nouns) + " " + generateword(adverbs) + " " + generateword(conjunctions) + " " + generateword(pronounsacc) + ". <br />"
++ generateword(exclamations) + " " + generateword(pronouns) + " " + generateword(verbs) + " " + generateword(pronounsacc) + " " + generateword(conjunctions) + " " + generateword(verbs) + " " + generateword(pronounsacc) + " " + generateword(adverbs) + "."
+
+;
+*/
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
