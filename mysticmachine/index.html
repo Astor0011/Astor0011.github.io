@@ -15,9 +15,9 @@ white-space: pre-line;
 <script>
 let memorywords = [""]; 
 
-const pronouns = ["I", "you", "he", "she", "it", "they"];
-const pronounsacc = ["me", "you", "him", "her", "it", "them"];
-const possessive = ["my", "your", "his", "her", "its", "their"];
+const pronouns = ["I", "you", "he", "she", "it", "they","I", "you", "he", "she", "it", "they"];
+const pronounsacc = ["me", "you", "him", "her", "it", "them", "me", "you", "him", "her", "it", "them"];
+const possessive = ["my", "your", "his", "her", "its", "their", "my", "your", "his", "her", "its", "their"];
 
 
 let numprons = pronouns.length;
@@ -46,7 +46,7 @@ function generateword(wordkind){
 	function checking()
 	{
 	let randword = Math.floor(Math.random() * wordkind.length);
-	let randword2 = Math.floor(Math.random() * randword / 3);
+	let randword2 = Math.floor(Math.random() * randword / 2);
 	}
 
 
@@ -54,7 +54,7 @@ function generateword(wordkind){
 	{
 
 	let randword = Math.floor(Math.random() * wordkind.length);
-	let randword2 = Math.floor(Math.random() * randword / 3);
+	let randword2 = Math.floor(Math.random() * randword / 2);
 
 
 		checking();
@@ -83,7 +83,7 @@ function generateword(wordkind){
 let i;
 
 
-for( i = 0; i < 90; i++){
+for( i = 0; i < 40; i++){
 	let wordchoices1 = ["nouns", "adjectives", "verbs", "exclamations", "conjunctions", "pronouns", "pronounsacc", "possessive", "adverbs"];
 		let selection = Math.floor(Math.random() * wordchoices1.length);
 
